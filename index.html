@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GalaxIQ — Início</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <div id="stars"></div>
+  
+    <nav class="nav">
+      <div class="nav__inner">
+        <a class="logo" href="index.html" aria-label="Início">
+          <svg class="logo__icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="30" stroke="#7c3aed" stroke-width="3"/>
+            <circle cx="32" cy="32" r="4" fill="#22d3ee"/>
+          </svg>
+          <span class="logo__text">GalaxIQ</span>
+        </a>
+        <div class="nav__links">
+          <a href="index.html">Início</a>
+          <a href="pesquisa.html">Pesquisa Desk</a>
+          <a href="competitiva.html">Análise Competitiva</a>
+          <a href="questionario.html">Questionário</a>
+          <a href="entrevistas.html">Entrevistas</a>
+          <a href="ideacao.html">Ideação</a>
+          <a href="resultados.html">Resultados</a>
+        </div>
+      </div>
+    </nav>
+    
+  
+    <header class="hero">
+      <div class="hero__content">
+        <div class="kicker">galaxiq • educação cósmica</div>
+        <h1 class="title">GalaxIQ</h1>
+        <p>Conhecimento em tempo real, com leveza e magia cósmica.</p>
+      </div>
+    </header>
+    
+  <main class="wrap">
+    
+<section class="card">
+  <h2>✨ Nossa missão</h2>
+  <p class="lead">Desenvolver soluções inovadoras de <strong>avaliação formativa</strong> que permitam aos professores identificar, em <em>tempo real</em>, o aprendizado dos alunos.</p>
+  <div class="features">
+    <div class="feature"><h3>🌌 Avaliação contínua</h3><p>Feedbacks frequentes e transparentes, integrados à jornada do aluno.</p></div>
+    <div class="feature"><h3>🧭 Tomada de decisão</h3><p>Dados para guiar ajustes de ritmo, linguagem e estratégias de ensino.</p></div>
+    <div class="feature"><h3>🎯 Foco no aprendizado</h3><p>Não é sobre nota: é sobre evidência de compreensão, momento a momento.</p></div>
+  </div>
+  <div class="btns" style="margin-top:16px">
+    <a class="btn" href="pesquisa.html">Pesquisa Desk</a>
+    <a class="btn" href="competitiva.html">Análise Competitiva</a>
+    <a class="btn" href="questionario.html">Questionário</a>
+    <a class="btn" href="entrevistas.html">Entrevistas</a>
+    <a class="btn" href="ideacao.html">Ideação</a>
+    <a class="btn" href="resultados.html">Resultados</a>
+  </div>
+</section>
+<section class="card"><h2>💭 How Might We</h2><p>Como podemos criar maneiras para que o professor e os alunos <strong>validem o aprendizado ao longo da aula</strong>?</p></section>
+
+  </main>
+  
+    <footer class="footer">
+      <div class="inner">
+        <div class="brand">
+          <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <rect x="2" y="2" width="60" height="60" rx="10" fill="#101729" stroke="#7c3aed" stroke-width="3"/>
+            <path d="M14 42V22h8c6 0 9 2.8 9 8.2V42h-6V31c0-3-1.6-4.4-5-4.4h-0.9V42H14Zm23 0V22h15v5h-9v3h8.5v5H43v7h-6Zm-1-26 6-6h8" stroke="#bcd3ff" stroke-width="2" />
+          </svg>
+          <strong>UFF</strong>
+        </div>
+        <div class="text">Introdução à Interação Humano-Computador — Universidade Federal Fluminense</div>
+      </div>
+    </footer>
+    
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.particlesJS) {
+    particlesJS('stars', {
+      "particles":{"number":{"value":120,"density":{"enable":true,"value_area":900}},"color":{"value":["#8ab5ff","#b48cff","#7de2ff","#ffffff"]},"shape":{"type":"circle"},"opacity":{"value":0.5,"random":true},"size":{"value":2,"random":true},"line_linked":{"enable":false},"move":{"enable":true,"speed":0.6,"direction":"none","random":true,"out_mode":"out"}},
+      "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"repulse":{"distance":80,"duration":0.4},"push":{"particles_nb":3}}},
+      "retina_detect":true
+    });
+  }
+  if (window.gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".hero .kicker", {opacity:0, y:-10, duration:.6});
+    gsap.from(".hero .title", {opacity:0, y:10, duration:.8, delay:.1});
+    gsap.from(".hero p", {opacity:0, y:10, duration:.8, delay:.2});
+    gsap.from(".btns a", {opacity:0, y:8, duration:.6, stagger:.06, delay:.3});
+    gsap.utils.toArray(".card").forEach((el, i)=>{
+      gsap.from(el, {opacity:0, y:16, duration:.7, delay:.2 + i*0.06, scrollTrigger: {trigger: el, start:"top 85%"}});
+    });
+  }
+});
+</script>
+</body>
+</html>
