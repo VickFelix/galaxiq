@@ -159,3 +159,27 @@ body { color-scheme: dark; }
   font-weight: 600;
   color: #fff; /* ou a cor que combina com seu tema */
 }
+
+.figma-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 32px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.figma-embed {
+  width: 100%;
+  height: 600px;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .figma-embed {
+    height: 400px;
+  }
+}
+
