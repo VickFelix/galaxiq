@@ -141,3 +141,21 @@ html {
 }
 body { color-scheme: dark; }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo__img {
+  width: 40px; /* ajusta conforme o tamanho da sua logo */
+  height: 40px;
+  border-radius: 50%; /* opcional, se quiser redonda */
+  object-fit: cover;
+}
+
+.logo__text {
+  font-weight: 600;
+  color: #fff; /* ou a cor que combina com seu tema */
+}
