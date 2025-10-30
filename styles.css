@@ -193,21 +193,22 @@ body { color-scheme: dark; }
 }
 
 /* === FOTOS DAS PERSONAS === */
+.feature {
+  text-align: center;
+}
+
 .persona-img {
-  display: block;
-  width: 20px;
-  height: 20px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #7c3aed;
-  margin: 8px auto 12px auto;
-  box-shadow: 0 0 6px rgba(124, 58, 237, 0.3);
+  margin: 10px auto 12px;
+  display: block;
+  box-shadow: 0 0 6px rgba(124, 58, 237, 0.4);
   transition: transform 0.3s ease;
 }
 
 .persona-img:hover {
   transform: scale(1.05);
-}
-.feature {
-  text-align: center;
 }
