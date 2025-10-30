@@ -12,84 +12,93 @@
 <body>
   <div id="stars"></div>
   
-    <nav class="nav">
-      <div class="nav__inner">
-        <a class="logo" href="index.html" aria-label="Início">
-          <svg class="logo__icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="32" cy="32" r="30" stroke="#7c3aed" stroke-width="3"/>
-            <circle cx="32" cy="32" r="4" fill="#22d3ee"/>
-          </svg>
-          <span class="logo__text">GalaxIQ</span>
-        </a>
-        <div class="nav__links">
-          <a href="index.html">Início</a>
-          <a href="pesquisa.html">Pesquisa Desk</a>
-          <a href="competitiva.html">Análise Competitiva</a>
-          <a href="questionario.html">Questionário</a>
-          <a href="entrevistas.html">Entrevistas</a>
-          <a href="ideacao.html">Ideação</a>
-          <a href="resultados.html">Resultados</a>
-        </div>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="logo" href="index.html" aria-label="Início">
+        <svg class="logo__icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="30" stroke="#7c3aed" stroke-width="3"/>
+          <circle cx="32" cy="32" r="4" fill="#22d3ee"/>
+        </svg>
+        <span class="logo__text">GalaxIQ</span>
+      </a>
+      <div class="nav__links">
+        <a href="index.html">Início</a>
+        <a href="pesquisa.html">Pesquisa Desk</a>
+        <a href="competitiva.html">Análise Competitiva</a>
+        <a href="questionario.html" class="active">Questionário</a>
+        <a href="entrevistas.html">Entrevistas</a>
+        <a href="ideacao.html">Ideação</a>
       </div>
-    </nav>
-    
+    </div>
+  </nav>
   
-    <header class="hero">
-      <div class="hero__content">
-        <div class="kicker">galaxiq • educação</div>
-        <h1 class="title">Questionário</h1>
-        <p>Coleta quantitativa para orientar decisões de design.</p>
-      </div>
-    </header>
-    
+  <header class="hero">
+    <div class="hero__content">
+      <div class="kicker">galaxiq • educação</div>
+      <h1 class="title">Questionário</h1>
+      <p>Coleta quantitativa para orientar decisões de design.</p>
+    </div>
+  </header>
+  
   <main class="wrap">
-    
-<section class="card">
-  <div class="section-kicker">métodos</div>
-  <h2>Questionário — técnica quantitativa</h2>
-  <p>Estruturamos o instrumento em blocos para conduzir o participante por uma <strong>linha lógica</strong> e levantar dados sobre experiência, comunicação e tecnologia.</p>
-  <div class="features">
-    <div class="feature"><h3>🧾 Blocos</h3><p>1) TCLE, 2) Filtro, 3) Experiência de aprendizagem, 4) Comunicação/Feedback, 5) Tecnologia.</p></div>
-    <div class="feature"><h3>🎓 Por que</h3><p>Coletar evidências numéricas para corroborar hipóteses da desk research e orientar a ideação.</p></div>
-    <div class="feature"><h3>📊 Resultado</h3><p>Confirma a receptividade a quizzes e aponta barreiras como distrações e desconforto para interromper aulas.</p></div>
-  </div>
-</section>
-<section class="card">
-  <h2>Responder ao Questionário</h2>
-  <iframe class="embed" src="https://form.jotform.com/252603583150047" allowfullscreen loading="lazy"></iframe>
-  <div class="btns"><a class="btn" href="resultados.html" target="_blank" rel="noopener">Ver Resultados da Pesquisa</a></div>
-</section>
+    <section class="card">
+      <div class="section-kicker">métodos</div>
+      <h2>Questionário — técnica quantitativa</h2>
+      <p>
+        Estruturamos o instrumento em blocos para conduzir o participante por uma 
+        <strong>linha lógica</strong> e levantar dados sobre experiência, comunicação e tecnologia.
+      </p>
+      <div class="features">
+        <div class="feature"><h3>🧾 Blocos</h3><p>1) TCLE, 2) Filtro, 3) Experiência de aprendizagem, 4) Comunicação/Feedback, 5) Tecnologia.</p></div>
+        <div class="feature"><h3>🎓 Por que</h3><p>Coletar evidências numéricas para corroborar hipóteses da desk research e orientar a ideação.</p></div>
+        <div class="feature"><h3>📊 Resultado</h3><p>Confirma a receptividade a quizzes e aponta barreiras como distrações e desconforto para interromper aulas.</p></div>
+      </div>
+    </section>
 
+    <section class="card">
+      <h2>Responder ao Questionário</h2>
+      <iframe class="embed" src="https://form.jotform.com/252603583150047" allowfullscreen loading="lazy"></iframe>
+      <p class="lead" style="margin-top:1em">
+        Tivemos relativamente poucas respostas, mas analisamos os dados disponíveis 
+        com cuidado para extrair aprendizados significativos. 
+        Você pode acessar a análise visual completa abaixo.
+      </p>
+      <div class="btns">
+        <a class="btn" href="https://claude.ai/public/artifacts/73e14bcc-9122-443d-9489-2904f44a40a0" target="_blank" rel="noopener">
+          Ver Resultados da Pesquisa
+        </a>
+      </div>
+    </section>
   </main>
   
   <footer class="footer">
-  <div class="inner">
-    <div class="brand">
+    <div class="inner">
+      <div class="text">
+        Introdução à Interação Humano-Computador — Universidade Federal Fluminense
+      </div>
     </div>
-    <div class="text">Introdução à Interação Humano-Computador — Universidade Federal Fluminense</div>
-  </div>
- </footer>
-    
+  </footer>
+  
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.particlesJS) {
-    particlesJS('stars', {
-      "particles":{"number":{"value":120,"density":{"enable":true,"value_area":900}},"color":{"value":["#8ab5ff","#b48cff","#7de2ff","#ffffff"]},"shape":{"type":"circle"},"opacity":{"value":0.5,"random":true},"size":{"value":2,"random":true},"line_linked":{"enable":false},"move":{"enable":true,"speed":0.6,"direction":"none","random":true,"out_mode":"out"}},
-      "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"repulse":{"distance":80,"duration":0.4},"push":{"particles_nb":3}}},
-      "retina_detect":true
-    });
-  }
-  if (window.gsap) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from(".hero .kicker", {opacity:0, y:-10, duration:.6});
-    gsap.from(".hero .title", {opacity:0, y:10, duration:.8, delay:.1});
-    gsap.from(".hero p", {opacity:0, y:10, duration:.8, delay:.2});
-    gsap.from(".btns a", {opacity:0, y:8, duration:.6, stagger:.06, delay:.3});
-    gsap.utils.toArray(".card").forEach((el, i)=>{
-      gsap.from(el, {opacity:0, y:16, duration:.7, delay:.2 + i*0.06, scrollTrigger: {trigger: el, start:"top 85%"}});
-    });
-  }
-});
-</script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.particlesJS) {
+      particlesJS('stars', {
+        "particles":{"number":{"value":120,"density":{"enable":true,"value_area":900}},"color":{"value":["#8ab5ff","#b48cff","#7de2ff","#ffffff"]},"shape":{"type":"circle"},"opacity":{"value":0.5,"random":true},"size":{"value":2,"random":true},"line_linked":{"enable":false},"move":{"enable":true,"speed":0.6,"direction":"none","random":true,"out_mode":"out"}},
+        "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"repulse":{"distance":80,"duration":0.4},"push":{"particles_nb":3}}},
+        "retina_detect":true
+      });
+    }
+    if (window.gsap) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.from(".hero .kicker", {opacity:0, y:-10, duration:.6});
+      gsap.from(".hero .title", {opacity:0, y:10, duration:.8, delay:.1});
+      gsap.from(".hero p", {opacity:0, y:10, duration:.8, delay:.2});
+      gsap.from(".btns a", {opacity:0, y:8, duration:.6, stagger:.06, delay:.3});
+      gsap.utils.toArray(".card").forEach((el, i)=>{
+        gsap.from(el, {opacity:0, y:16, duration:.7, delay:.2 + i*0.06, scrollTrigger: {trigger: el, start:"top 85%"}});
+      });
+    }
+  });
+  </script>
 </body>
 </html>
