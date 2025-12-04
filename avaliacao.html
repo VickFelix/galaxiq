@@ -88,6 +88,16 @@
   background: rgba(124,58,237,0.85);
   transform: translateY(-50%) scale(1.12);
 }
+.card .carousel,
+.card .btns {
+  margin-left: 0 !important;
+}
+
+.card .btns .btn {
+  display: inline-block;
+  margin-left: 0;
+}
+
   </style>
 
   <!-- scripts do fundo -->
@@ -137,10 +147,10 @@
 <!-- ======================== AVALIAÇÃO HEURÍSTICA ======================== -->
 <section class="card">
   <div class="section-kicker">método</div>
-  <h2>O que é Avaliação Heurística?</h2>
+  <h2>Avaliação Heurística?</h2>
 
   <p>
-    A Avaliação Heurística é uma inspeção especializada onde a interface é analisada pelas dez heurísticas de Nielsen.
+    A Avaliação Heurística é um método de inspeção de usabilidade, especialistas analisam uma interface com base em um conjunto de princípios consolidados, como as heurísticas de Nielsen. O objetivo é identificar problemas estruturais antes de envolver usuários reais, garantindo que o protótipo esteja alinhado a boas práticas de design. Essa técnica permite detectar falhas relacionadas à consistência, visibilidade do status do sistema, clareza de rótulos, prevenção de erros e correspondência entre o sistema e o modelo mental do usuário. Por ser rápida, econômica e eficaz para revelar problemas conceituais, tornou-se etapa fundamental em processos iterativos de design.
   </p>
 
   <!-- CARROSSEL DAS HEURÍSTICAS -->
@@ -156,14 +166,12 @@
     <button class="carousel-btn next h-next">&#10095;</button>
   </div>
 
-  <h3 style="margin-top:32px;">Insight Geral da Avaliação</h3>
+  <h3 style="margin-top:32px;">Insights e gráficos das heurísticas</h3>
 
   <p>
-    Identificamos falhas críticas de consistência, rótulos ambíguos e falta de feedback adequado.
+    A Avaliação revelou pontos importantes sobre o protótipo. Foram identificadas inconsistências entre rotas e perfis, mudanças no fluxo de navegação e termos que dificultavam a interpretação das ações. Também foram observadas falhas na visibilidade de feedbacks, especialmente em momentos críticos, como envio de dúvidas ou transição entre turmas. Outro insight relevante foi a necessidade de reforçar a hierarquia visual em telas densas, reduzindo sobrecarga cognitiva. Essas observações permitiram ajustes precoces e orientaram o refinamento do protótipo antes dos testes com usuários, fortalecendo a clareza, previsibilidade e coerência da interface.
   </p>
 
-  <!-- CARROSSEL GRÁFICOS -->
-  <h3 style="margin-top:32px;">Gráficos da Avaliação</h3>
 
   <div class="carousel graphs-carousel">
     <div class="carousel-inner">
@@ -189,7 +197,7 @@
   <h2>First Click</h2>
 
   <p>
-    O First Click analisa onde o usuário clica primeiro ao tentar realizar uma tarefa.
+   O First Click é um método de avaliação que analisa onde o usuário clica primeiro ao tentar executar uma tarefa específica. Se o primeiro clique está correto, as chances de sucesso no restante do fluxo aumentam significativamente. Esse método permite verificar a intuitividade da interface, a clareza dos rótulos e a eficácia da hierarquia visual. Além de fornecer métricas objetivas como tempo até o primeiro clique, taxa de acerto e mapas de calor. o First Click revela padrões de hesitação e dispersão que ajudam a identificar elementos pouco visíveis ou mal posicionados. Por ser rápido e focado em decisões iniciais, é ideal para validar se os caminhos mais importantes estão claros ao primeiro olhar.
   </p>
 
   <div class="firstclick-wrapper"></div>
@@ -207,9 +215,19 @@
 <!-- ======================== PRÓXIMO MÉTODO ======================== -->
 <section class="card">
   <div class="section-kicker">método</div>
-  <h2>Percurso Cognitivo (ou Teste de Usabilidade)</h2>
+  <h2>Percurso Cognitivo</h2>
 
-  <p>Assim que a escolha final for definida, o conteúdo será adicionado aqui.</p>
+  <p>O Percurso Cognitivo é um método de avaliação centrado na perspectiva de um usuário iniciante, utilizado para analisar passo a passo como alguém percorre um fluxo dentro da interface. Em vez de observar usuários reais, o avaliador simula mentalmente o processo de tomada de decisão, verificando se cada etapa de uma tarefa é percebida, compreendida e executada da forma esperada.
+    A análise é feita etapa por etapa, guiada por quatro perguntas essenciais:
+
+       1. O usuário entende qual é a meta naquele momento?
+
+       2. Ele percebe a ação correta disponível na tela?
+
+       3. Ele reconhece que essa ação leva ao resultado desejado?
+       4. Ele percebe que avançou na tarefa graças ao feedback do sistema?
+    Ao aplicar essas quatro verificações de forma sequencial ao longo do caminho de uma tarefa, o Percurso Cognitivo permite identificar pontos de confusão, falta de previsibilidade, falhas de feedback e trechos em que o usuário pode não saber como avançar. É um método rápido, acessível e extremamente valioso para refinar fluxos completos antes de envolver usuários reais em testes de usabilidade.
+  </p>
 </section>
 
 </main>
