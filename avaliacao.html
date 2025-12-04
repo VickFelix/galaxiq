@@ -6,37 +6,75 @@
   <title>GalaxIQ — Avaliação</title>
 
   <link rel="stylesheet" href="styles.css">
+
   <style>
-    /* ===== Correção da foto04 ===== */
-    .carousel-inner img {
-      border-radius: 18px !important;
+    /* ==========================
+       CARROSSEL UNIVERSAL
+       ========================== */
+    .carousel {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.02);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.45);
     }
 
-    /* ===== Layout First Click ===== */
+    .carousel-inner {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      min-width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: contain;
+      background: #000;
+      border-radius: 26px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(18,18,32,0.65);
+      border: none;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 50;
+      transition: 0.3s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(124,58,237,0.85);
+      transform: translateY(-50%) scale(1.15);
+    }
+
+    .carousel-btn.prev { left: 12px; }
+    .carousel-btn.next { right: 12px; }
+
+    @media (max-width: 900px) {
+      .carousel-inner img {
+        max-height: 300px;
+      }
+    }
+
+    /* ======================
+       FIRST CLICK GRID
+       ====================== */
     .firstclick-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
       margin-top: 28px;
-    }
-
-    .firstclick-block {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-
-    .firstclick-proto {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 0 18px rgba(0,0,0,0.4);
-    }
-
-    .firstclick-graph {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 16px rgba(0,0,0,0.3);
     }
 
     .btn-row {
@@ -45,11 +83,8 @@
       margin-top: 20px;
     }
 
-    /* Responsivo */
-    @media(max-width: 900px) {
-      .firstclick-wrapper {
-        grid-template-columns: 1fr;
-      }
+    @media(max-width:900px){
+      .firstclick-wrapper { grid-template-columns: 1fr; }
     }
   </style>
 
@@ -103,30 +138,37 @@
     É eficaz para localizar falhas de consistência, rotas incorretas, rótulos ambíguos e falta de feedback.
   </p>
 
-  <!-- CARROSSEL -->
-  <div class="carousel">
+  <!-- CARROSSEL 1 -->
+  <div class="carousel heuristica-carousel">
     <div class="carousel-inner">
-      <img src="assets/img/foto04.jpeg" alt="">
-      <img src="assets/img/foto04.jpeg" alt="">
-      <img src="assets/img/foto04.jpeg" alt="">
-      <img src="assets/img/foto04.jpeg" alt="">
+      <img src="assets/img/foto04.jpeg">
+      <img src="assets/img/foto04.jpeg">
+      <img src="assets/img/foto04.jpeg">
+      <img src="assets/img/foto04.jpeg">
     </div>
 
-    <button class="carousel-btn prev">&#10094;</button>
-    <button class="carousel-btn next">&#10095;</button>
+    <button class="carousel-btn prev h-prev">&#10094;</button>
+    <button class="carousel-btn next h-next">&#10095;</button>
   </div>
 
   <h3 style="margin-top:32px;">Insight Geral da Avaliação</h3>
+
   <p>
-    Identificamos falhas críticas de consistência, termos ambíguos (“Entrar”, “FAC”), rotas incorretas, ausência de botões
-    de retorno e falta de feedback ao enviar ações importantes.
+    Identificamos falhas críticas de consistência, termos ambíguos (“Entrar”, “FAC”), rotas incorretas e ausência de feedback adequado.
   </p>
 
-  <!-- GRÁFICOS -->
-  <div class="charts">
-    <img class="chart-img" src="assets/img/foto01.jpeg">
-    <img class="chart-img" src="assets/img/foto02.jpeg">
-    <img class="chart-img" src="assets/img/foto03.jpeg">
+  <!-- CARROSSEL 2 (GRÁFICOS) -->
+  <h3 style="margin-top:32px;">Gráficos da Avaliação</h3>
+
+  <div class="carousel graphs-carousel">
+    <div class="carousel-inner">
+      <img src="assets/img/foto01.jpeg">
+      <img src="assets/img/foto02.jpeg">
+      <img src="assets/img/foto03.jpeg">
+    </div>
+
+    <button class="carousel-btn prev g-prev">&#10094;</button>
+    <button class="carousel-btn next g-next">&#10095;</button>
   </div>
 
   <div class="btns" style="margin-top:20px;">
@@ -141,25 +183,16 @@
   <h2>First Click</h2>
 
   <p>
-    O First Click analisa onde o usuário clica primeiro ao tentar realizar uma tarefa.  
-    Cada acerto ou desvio mostra se a hierarquia visual é clara e se a navegação é intuitiva.
+    O First Click analisa onde o usuário clica primeiro ao tentar realizar uma tarefa.
   </p>
 
-  <!-- GRID DE 10 PROTÓTIPOS + GRÁFICOS -->
   <div class="firstclick-wrapper">
-
-
-    <!-- BLOCO 4 -->
-
-
-    <!-- BLOCO 5 -->
-
   </div>
 
-  <!-- BOTÕES -->
   <div class="btn-row">
-    <a class="btn" target="_blank" href="https://app.useberry.com/preview/w2uDJ14jIBfr6P/?createPreview">
-      🔍 Prévia do First Click
+    <a class="btn" target="_blank"
+       href="https://app.useberry.com/preview/w2uDJ14jIBfr6P/?createPreview">
+       🔍 Prévia do First Click
     </a>
     <a class="btn" target="_blank" href="assets/docs/Relatorio_FirstClick_GalaxIQ.pdf">
       📄 Baixar Relatório
@@ -173,15 +206,8 @@
   <div class="section-kicker">método</div>
   <h2>Percurso Cognitivo (ou Teste de Usabilidade)</h2>
 
-  <p>
-    Blablabla
-  </p>
-
-  <p>
-    Assim que a escolha final for definida, o conteúdo será adicionado aqui.
-  </p>
+  <p>Assim que a escolha final for definida, o conteúdo será adicionado aqui.</p>
 </section>
-
 
 </main>
 
@@ -189,55 +215,35 @@
 <footer class="footer">
   <div class="inner">
     <div class="brand"></div>
-    <div class="text">
-      Introdução à Interação Humano-Computador — Universidade Federal Fluminense
-    </div>
+    <div class="text">Introdução à Interação Humano-Computador — Universidade Federal Fluminense</div>
   </div>
 </footer>
 
-<!-- SCRIPTS -->
+<!-- SCRIPTS: controla os 2 carrosséis -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-  /* ESTRELAS */
-  if (window.particlesJS) {
-    particlesJS('stars', {
-      particles:{
-        number:{ value:120, density:{ enable:true, value_area:900 }},
-        color:{ value:["#8ab5ff","#b48cff","#7de2ff","#ffffff"] },
-        opacity:{ value:0.5 },
-        size:{ value:2, random:true },
-        move:{ enable:true, speed:0.6, out_mode:"out" }
-      }
-    });
+  function initCarousel(wrapperSelector, prevSelector, nextSelector) {
+    const wrapper = document.querySelector(wrapperSelector);
+    if (!wrapper) return;
+
+    const inner = wrapper.querySelector(".carousel-inner");
+    const slides = inner.querySelectorAll("img");
+    let index = 0;
+
+    function showSlide(i) {
+      index = (i + slides.length) % slides.length;
+      inner.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    wrapper.querySelector(prevSelector).onclick = () => showSlide(index - 1);
+    wrapper.querySelector(nextSelector).onclick = () => showSlide(index + 1);
+
+    showSlide(0);
   }
 
-  /* ANIMAÇÃO GSAP */
-  if (window.gsap) {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.from(".hero .title", {opacity:0, y:15, duration:0.8});
-    gsap.from(".hero p", {opacity:0, y:10, duration:0.8, delay:0.1});
-    gsap.utils.toArray(".card").forEach((el,i)=>{
-      gsap.from(el,{ opacity:0, y:20, duration:.7, delay:.2+i*0.05,
-        scrollTrigger:{ trigger:el, start:"top 85%" }
-      });
-    });
-  }
-
-  /* CARROSSEL */
-  const carousel = document.querySelector(".carousel-inner");
-  const slides = document.querySelectorAll(".carousel-inner img");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  let index = 0;
-
-  function showSlide(i) {
-    index = (i + slides.length) % slides.length;
-    carousel.style.transform = `translateX(${-index * 100}%)`;
-  }
-
-  prevBtn.addEventListener("click", () => showSlide(index - 1));
-  nextBtn.addEventListener("click", () => showSlide(index + 1));
+  initCarousel(".heuristica-carousel", ".h-prev", ".h-next");
+  initCarousel(".graphs-carousel", ".g-prev", ".g-next");
 });
 </script>
 
