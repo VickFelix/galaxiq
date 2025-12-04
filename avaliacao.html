@@ -103,15 +103,24 @@
     background: rgba(124,58,237,0.85);
     transform: translateY(-50%) scale(1.12);
   }
- .two-cols .left {
-  flex: 0 0 45%; /* carrossel: menor e alinhado */
+ .two-cols {
   display: flex;
-  justify-content: flex-end;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* impede DE CAIR PARA BAIXO */
+}
+
+.two-cols .left {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: flex-end; /* joga o carrossel para a direita */
 }
 
 .two-cols .right {
-  flex: 0 0 55%; /* texto: mais largo */
+  flex: 1;
 }
+
 
 </style>
 
