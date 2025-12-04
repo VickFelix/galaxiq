@@ -8,97 +8,112 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-   /* ============================================================
-   CARROSSEL DAS HEURÍSTICAS — NATURAL, SEM CORTES, SEM FUNDO
-   ============================================================ */
-.heuristica-carousel {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin: 30px auto;
-  overflow: hidden;
-  border-radius: 50px;
-}
+      .two-cols {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
-.heuristica-carousel .carousel-inner {
-  display: flex;
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-}
+  .two-cols .left {
+    flex: 1 1 55%;
+  }
 
-.heuristica-carousel img {
-  width: 100%;
-  min-width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  border-radius: 50px;
-  background: transparent;
-}
+  .two-cols .right {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+  }
 
-/* ============================================================
-   CARROSSEL DOS GRÁFICOS — LIVRE, SEM CORTES
-   ============================================================ */
-.graphs-carousel {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  margin: 30px auto;
-  overflow: hidden;
-  border-radius: 20px;
-  background: #000000;
-}
+  .heuristica-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 50px;
+  }
 
-.graphs-carousel .carousel-inner {
-  display: flex;
-  width: 100%;
-  transition: transform 0.5s ease;
-}
+  .heuristica-carousel .carousel-inner {
+    display: flex;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
 
-.graphs-carousel img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  border-radius: 20px;
-  background: #000000;
-}
+  .heuristica-carousel img {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 50px;
+    background: transparent;
+  }
 
-/* Botões dos carrosséis */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.55);
-  border: none;
-  padding: 14px;
-  color: #fff;
-  font-size: 26px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 100;
-  transition: 0.25s ease;
-}
+  /* ============================================================
+    CARROSSEL DOS GRÁFICOS — LIVRE, SEM CORTES
+    ============================================================ */
+  .graphs-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000000;
+  }
 
-.carousel-btn.prev { left: 12px; }
-.carousel-btn.next { right: 12px; }
+  .graphs-carousel .carousel-inner {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
 
-.carousel-btn:hover {
-  background: rgba(124,58,237,0.85);
-  transform: translateY(-50%) scale(1.12);
-}
-.card .carousel,
-.card .btns {
-  margin-left: 0 !important;
-}
+  .graphs-carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 20px;
+    background: #000000;
+  }
 
-.card .btns .btn {
-  display: inline-block;
-  margin-left: 0;
-}
+  /* Botões dos carrosséis */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.55);
+    border: none;
+    padding: 14px;
+    color: #fff;
+    font-size: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    transition: 0.25s ease;
+  }
 
-  </style>
+  .carousel-btn.prev { left: 12px; }
+  .carousel-btn.next { right: 12px; }
+
+  .carousel-btn:hover {
+    background: rgba(124,58,237,0.85);
+    transform: translateY(-50%) scale(1.12);
+  }
+  .card .carousel,
+  .card .btns {
+    margin-left: 0 !important;
+  }
+
+  .card .btns .btn {
+    display: inline-block;
+    margin-left: 0;
+  }
+
+</style>
 
   <!-- scripts do fundo -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
@@ -149,22 +164,31 @@
   <div class="section-kicker">método</div>
   <h2>Avaliação Heurística?</h2>
 
-  <p>
-    A Avaliação Heurística é um método de inspeção de usabilidade, especialistas analisam uma interface com base em um conjunto de princípios consolidados, como as heurísticas de Nielsen. O objetivo é identificar problemas estruturais antes de envolver usuários reais, garantindo que o protótipo esteja alinhado a boas práticas de design. Essa técnica permite detectar falhas relacionadas à consistência, visibilidade do status do sistema, clareza de rótulos, prevenção de erros e correspondência entre o sistema e o modelo mental do usuário. Por ser rápida, econômica e eficaz para revelar problemas conceituais, tornou-se etapa fundamental em processos iterativos de design.
-  </p>
+  <div class="two-cols">
 
-  <!-- CARROSSEL DAS HEURÍSTICAS -->
-  <div class="carousel heuristica-carousel">
-    <div class="carousel-inner">
-      <img src="assets/img/foto04.jpeg">
-      <img src="assets/img/foto04.jpeg">
-      <img src="assets/img/foto04.jpeg">
-      <img src="assets/img/foto04.jpeg">
-    </div>
-
-    <button class="carousel-btn prev h-prev">&#10094;</button>
-    <button class="carousel-btn next h-next">&#10095;</button>
+  <!-- TEXTO À ESQUERDA -->
+  <div class="left">
+    <p>
+      A Avaliação Heurística é um método de inspeção de usabilidade...
+    </p>
   </div>
+
+  <!-- CARROSSEL À DIREITA -->
+  <div class="right">
+    <div class="carousel heuristica-carousel">
+      <div class="carousel-inner">
+        <img src="assets/img/foto04.jpeg">
+        <img src="assets/img/foto04.jpeg">
+        <img src="assets/img/foto04.jpeg">
+        <img src="assets/img/foto04.jpeg">
+      </div>
+
+      <button class="carousel-btn prev h-prev">&#10094;</button>
+      <button class="carousel-btn next h-next">&#10095;</button>
+    </div>
+  </div>
+
+</div>
 
   <h3 style="margin-top:32px;">Insights e gráficos das heurísticas</h3>
 
