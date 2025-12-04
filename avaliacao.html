@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GalaxIQ — Avaliação</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== Correção da foto04 ===== */
+    .carousel-inner img {
+      border-radius: 18px !important;
+    }
+
+    /* ===== Layout First Click ===== */
+    .firstclick-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 28px;
+    }
+
+    .firstclick-block {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .firstclick-proto {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.4);
+    }
+
+    .firstclick-graph {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 16px rgba(0,0,0,0.3);
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    /* Responsivo */
+    @media(max-width: 900px) {
+      .firstclick-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+<div id="stars"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="logo" href="index.html">
+      <svg class="logo__icon" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="30" stroke="#7c3aed" stroke-width="3"></circle>
+        <circle cx="32" cy="32" r="4" fill="#22d3ee"></circle>
+      </svg>
+      <span class="logo__text">GalaxIQ</span>
+    </a>
+
+    <div class="nav__links">
+      <a href="index.html">Início</a>
+      <a href="imersao.html">Imersão</a>
+      <a href="ideacao.html">Ideação</a>
+      <a href="avaliacao.html" class="active">Avaliação</a>
+      <a href="roadmap.html">roadmap</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<header class="hero">
+  <div class="hero__content">
+    <div class="kicker">galaxiq • análise</div>
+    <h1 class="title">Avaliação Heurística</h1>
+    <p>Problemas revelados, constelações corrigidas e caminhos que guiaram o redesign.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ======================== AVALIAÇÃO HEURÍSTICA ======================== -->
+<section class="card">
+  <div class="section-kicker">método</div>
+  <h2>O que é Avaliação Heurística?</h2>
+
+  <p>
+    A Avaliação Heurística é uma inspeção especializada onde a interface é analisada pelas dez heurísticas de Nielsen.
+    É eficaz para localizar falhas de consistência, rotas incorretas, rótulos ambíguos e falta de feedback.
+  </p>
+
+  <!-- CARROSSEL -->
+  <div class="carousel">
+    <div class="carousel-inner">
+      <img src="assets/imgs/foto04.jpeg" alt="">
+      <img src="assets/imgs/foto04.jpeg" alt="">
+      <img src="assets/imgs/foto04.jpeg" alt="">
+      <img src="assets/imgs/foto04.jpeg" alt="">
+    </div>
+
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+
+  <h3 style="margin-top:32px;">Insight Geral da Avaliação</h3>
+  <p>
+    Identificamos falhas críticas de consistência, termos ambíguos (“Entrar”, “FAC”), rotas incorretas, ausência de botões
+    de retorno e falta de feedback ao enviar ações importantes.
+  </p>
+
+  <!-- GRÁFICOS -->
+  <div class="charts">
+    <img class="chart-img" src="assets/imgs/foto01.jpg">
+    <img class="chart-img" src="assets/imgs/foto02.jpg">
+    <img class="chart-img" src="assets/imgs/foto03.jpg">
+  </div>
+
+  <div class="btns" style="margin-top:20px;">
+    <a class="btn" href="assets/docs/Avaliacao_Heuristica_GalaxIQ.pdf" target="_blank">📄 Abrir Relatório Completo</a>
+  </div>
+</section>
+
+
+<!-- ======================== FIRST CLICK ======================== -->
+<section class="card">
+  <div class="section-kicker">método</div>
+  <h2>First Click</h2>
+
+  <p>
+    O First Click analisa onde o usuário clica primeiro ao tentar realizar uma tarefa.  
+    Cada acerto ou desvio mostra se a hierarquia visual é clara e se a navegação é intuitiva.
+  </p>
+
+  <!-- GRID DE 10 PROTÓTIPOS + GRÁFICOS -->
+  <div class="firstclick-wrapper">
+
+    <!-- BLOCO 1 -->
+    <div class="firstclick-block">
+      <img class="firstclick-proto" src="assets/firstclick/proto1.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/time1.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/conf1.jpg">
+    </div>
+
+    <!-- BLOCO 2 -->
+    <div class="firstclick-block">
+      <img class="firstclick-proto" src="assets/firstclick/proto2.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/time2.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/conf2.jpg">
+    </div>
+
+    <!-- BLOCO 3 -->
+    <div class="firstclick-block">
+      <img class="firstclick-proto" src="assets/firstclick/proto3.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/time3.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/conf3.jpg">
+    </div>
+
+    <!-- BLOCO 4 -->
+    <div class="firstclick-block">
+      <img class="firstclick-proto" src="assets/firstclick/proto4.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/time4.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/conf4.jpg">
+    </div>
+
+    <!-- BLOCO 5 -->
+    <div class="firstclick-block">
+      <img class="firstclick-proto" src="assets/firstclick/proto5.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/time5.jpg">
+      <img class="firstclick-graph" src="assets/firstclick/conf5.jpg">
+    </div>
+
+  </div>
+
+  <!-- BOTÕES -->
+  <div class="btn-row">
+    <a class="btn" target="_blank" href="https://app.useberry.com/preview/w2uDJ14jIBfr6P/?createPreview">
+      🔍 Prévia do First Click
+    </a>
+    <a class="btn" target="_blank" href="assets/docs/Relatorio_FirstClick_GalaxIQ.pdf">
+      📄 Baixar Relatório
+    </a>
+  </div>
+</section>
+
+
+<!-- ======================== PRÓXIMO MÉTODO ======================== -->
+<section class="card">
+  <div class="section-kicker">método</div>
+  <h2>Percurso Cognitivo (ou Teste de Usabilidade)</h2>
+
+  <p>
+    Nesta seção será descrita a próxima técnica de avaliação escolhida pelo grupo, permitindo
+    analisar a tomada de decisão passo a passo na interface ou observar o uso real do sistema.
+  </p>
+
+  <p>
+    Assim que a escolha final for definida, o conteúdo será adicionado aqui com screenshots,
+    insights e relatório correspondente.
+  </p>
+</section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="inner">
+    <div class="brand"></div>
+    <div class="text">
+      Introdução à Interação Humano-Computador — Universidade Federal Fluminense
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  /* ESTRELAS */
+  if (window.particlesJS) {
+    particlesJS('stars', {
+      particles:{
+        number:{ value:120, density:{ enable:true, value_area:900 }},
+        color:{ value:["#8ab5ff","#b48cff","#7de2ff","#ffffff"] },
+        opacity:{ value:0.5 },
+        size:{ value:2, random:true },
+        move:{ enable:true, speed:0.6, out_mode:"out" }
+      }
+    });
+  }
+
+  /* ANIMAÇÃO GSAP */
+  if (window.gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".hero .title", {opacity:0, y:15, duration:0.8});
+    gsap.from(".hero p", {opacity:0, y:10, duration:0.8, delay:0.1});
+    gsap.utils.toArray(".card").forEach((el,i)=>{
+      gsap.from(el,{ opacity:0, y:20, duration:.7, delay:.2+i*0.05,
+        scrollTrigger:{ trigger:el, start:"top 85%" }
+      });
+    });
+  }
+
+  /* CARROSSEL */
+  const carousel = document.querySelector(".carousel-inner");
+  const slides = document.querySelectorAll(".carousel-inner img");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+  let index = 0;
+
+  function showSlide(i) {
+    index = (i + slides.length) % slides.length;
+    carousel.style.transform = `translateX(${-index * 100}%)`;
+  }
+
+  prevBtn.addEventListener("click", () => showSlide(index - 1));
+  nextBtn.addEventListener("click", () => showSlide(index + 1));
+});
+</script>
+
+</body>
+</html>
