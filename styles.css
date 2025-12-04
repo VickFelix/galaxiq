@@ -245,92 +245,67 @@ body { color-scheme: dark; }
   box-shadow: 0 0 6px rgba(124, 58, 237, 0.4);
 }
 
-
-
+/* ==========================
+   CARROSSEL UNIVERSAL AJUSTADO
+   ========================== */
 
 .carousel {
-  position: relative !important;
-  width: 100% !important;
-  max-width: 920px !important;  
-  margin: 30px auto !important;
-  overflow: hidden !important;
-  border-radius: 38px !important;   
-  background: transparent !important;
-  box-shadow: 0 10px 30px rgba(2,6,23,0.45) !important;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 26px;
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
 }
 
 .carousel-inner {
-  display: flex !important;
-  width: 100% !important;
-  transition: transform 0.52s cubic-bezier(.2,.9,.2,1) !important;
-  will-change: transform;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
+/* deixa a imagem aparecer SEM cortar */
 .carousel-inner img {
-  min-width: 100% !important;       
-  width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  object-fit: cover !important;
-  border-radius: 38px !important; 
-  background: transparent !important;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 26px;
+  display: block;
 }
 
-
-.carousel, .carousel-inner, .carousel-inner img {
-  box-sizing: border-box !important;
-}
-
-/* botões */
+/* Botões */
 .carousel-btn {
-  position: absolute !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  background: rgba(18,18,30,0.64) !important;
-  border: none !important;
-  padding: 12px 14px !important;
-  color: #fff !important;
-  font-size: 26px !important;
-  cursor: pointer !important;
-  border-radius: 50% !important;
-  z-index: 60 !important;
-  transition: transform .18s ease, background .18s ease !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(18,18,32,0.7);
+  border: none;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 50;
+  transition: 0.25s ease;
 }
 
-.carousel-btn:hover { transform: translateY(-50%) scale(1.08) !important; background: rgba(124,58,237,0.78) !important; }
-.carousel-btn.prev { left: 14px !important; }
-.carousel-btn.next { right: 14px !important; }
+.carousel-btn.prev { left: 14px; }
+.carousel-btn.next { right: 14px; }
 
-
-.charts {
-  display:flex !important;
-  flex-wrap:wrap !important;
-  gap:18px !important;
-  justify-content:center !important;
-  margin-top: 28px !important;
+.carousel-btn:hover {
+  background: rgba(124,58,237,0.85);
+  transform: translateY(-50%) scale(1.12);
 }
 
-.chart-img {
-  width: 100% !important;
-  max-width: 380px !important;
-  height: auto !important;
-  border-radius: 14px !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35) !important;
-  display:block !important;
-  object-fit: contain !important;
-  background: transparent !important;
+/* Responsivo */
+@media (max-width: 900px) {
+  .carousel {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+  .carousel-inner img {
+    height: auto;
+    max-height: none;
+  }
 }
-
-
-.firstclick-wrapper { gap: 28px !important; grid-template-columns: 1fr 1fr !important; }
-.firstclick-proto, .firstclick-graph { border-radius: 14px !important; }
-
-/* responsivo */
-@media (max-width: 920px) {
-  .carousel { max-width: 96% !important; margin: 20px auto !important; }
-  .firstclick-wrapper { grid-template-columns: 1fr !important; }
-  .chart-img { max-width: 100% !important; }
-}
-
-
-img { background: transparent !important; }
