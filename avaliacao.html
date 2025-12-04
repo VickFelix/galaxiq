@@ -8,111 +8,85 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* ============================================================
-       CARROSSEL — HEURÍSTICAS (retangular, sem fundo preto, sem cortes)
-       ============================================================ */
-    .heuristica-carousel {
-      position: relative;
-      width: 100%;
-      max-width: 850px;
-      margin: 30px auto;
-      overflow: hidden;
-      border-radius: 28px;
-      background: transparent !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.40);
-    }
+   /* ============================================================
+   CARROSSEL DAS HEURÍSTICAS — NATURAL, SEM CORTES, SEM FUNDO
+   ============================================================ */
+.heuristica-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 36px; /* AUMENTEI o border radius */
+}
 
-    .heuristica-carousel .carousel-inner {
-      display: flex;
-      width: 100%;
-      transition: transform 0.5s ease;
-    }
+.heuristica-carousel .carousel-inner {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
 
-    .heuristica-carousel .carousel-inner img {
-      width: 100%;
-      height: auto;                /* imagem inteira */
-      object-fit: contain !important;
-      background: transparent !important;
-      border-radius: 28px;
-      display: block;
-    }
+.heuristica-carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;     /* imagem inteira */
+  background: transparent;  /* remove fundo preto */
+  display: block;
+  border-radius: 36px;
+}
 
-    /* Botões */
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.55);
-      border: none;
-      padding: 14px;
-      color: #fff;
-      font-size: 26px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 100;
-      transition: 0.25s ease;
-    }
+/* ============================================================
+   CARROSSEL DOS GRÁFICOS — LIVRE, SEM CORTES
+   ============================================================ */
+.graphs-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 700px;  /* deixa respirar */
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #000000; /* fundo preto opcional */
+}
 
-    .carousel-btn.prev { left: 12px; }
-    .carousel-btn.next { right: 12px; }
+.graphs-carousel .carousel-inner {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
 
-    .carousel-btn:hover {
-      background: rgba(124,58,237,0.85);
-      transform: translateY(-50%) scale(1.12);
-    }
+.graphs-carousel img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;     /* não corta NADA */
+  display: block;
+  border-radius: 20px;
+  background: #000;        /* deixa 100% seguro p/ gráficos largos */
+}
 
-    /* ============================================================
-       CARROSSEL — GRÁFICOS (quadrado, transparente, sem fundo)
-       ============================================================ */
-    .graphs-carousel {
-      position: relative;
-      width: 100%;
-      max-width: 420px;
-      aspect-ratio: 1/1;
-      margin: 30px auto;
-      overflow: hidden;
-      border-radius: 28px;
-      background: transparent !important;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
-    }
+/* Botões dos carrosséis */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.55);
+  border: none;
+  padding: 14px;
+  color: #fff;
+  font-size: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.25s ease;
+}
 
-    .graphs-carousel .carousel-inner {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      transition: transform 0.5s ease;
-    }
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
 
-    .graphs-carousel .carousel-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;             /* preenche o quadrado */
-      border-radius: 28px;
-      background: transparent !important;
-      display: block;
-    }
+.carousel-btn:hover {
+  background: rgba(124,58,237,0.85);
+  transform: translateY(-50%) scale(1.12);
+}
 
-    /* ============================================================
-       GRID FIRST CLICK
-       ============================================================ */
-    .firstclick-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      margin-top: 28px;
-    }
-
-    @media(max-width:900px){
-      .firstclick-wrapper { grid-template-columns: 1fr; }
-      .heuristica-carousel,
-      .graphs-carousel { max-width: 95%; }
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 12px;
-      margin-top: 20px;
-    }
   </style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
@@ -166,16 +140,17 @@
 
   <!-- CARROSSEL DAS HEURÍSTICAS -->
   <div class="carousel heuristica-carousel">
-    <div class="carousel-inner">
-      <img src="assets/img/foto04.jpeg">
-      <img src="assets/img/foto04.jpeg">
-      <img src="assets/img/foto04.jpeg">
-      <img src="assets/img/foto04.jpeg">
-    </div>
-
-    <button class="carousel-btn prev h-prev">&#10094;</button>
-    <button class="carousel-btn next h-next">&#10095;</button>
+  <div class="carousel-inner">
+    <img src="assets/img/foto04.jpeg">
+    <img src="assets/img/foto04.jpeg">
+    <img src="assets/img/foto04.jpeg">
+    <img src="assets/img/foto04.jpeg">
   </div>
+
+  <button class="carousel-btn prev h-prev">&#10094;</button>
+  <button class="carousel-btn next h-next">&#10095;</button>
+</div>
+
 
   <h3 style="margin-top:32px;">Insight Geral da Avaliação</h3>
 
@@ -187,15 +162,16 @@
   <h3 style="margin-top:32px;">Gráficos da Avaliação</h3>
 
   <div class="carousel graphs-carousel">
-    <div class="carousel-inner">
-      <img src="assets/img/foto01.jpeg">
-      <img src="assets/img/foto02.jpeg">
-      <img src="assets/img/foto03.jpeg">
-    </div>
-
-    <button class="carousel-btn prev g-prev">&#10094;</button>
-    <button class="carousel-btn next g-next">&#10095;</button>
+  <div class="carousel-inner">
+    <img src="assets/img/foto01.jpeg">
+    <img src="assets/img/foto02.jpeg">
+    <img src="assets/img/foto03.jpeg">
   </div>
+
+  <button class="carousel-btn prev g-prev">&#10094;</button>
+  <button class="carousel-btn next g-next">&#10095;</button>
+</div>
+
 
   <div class="btns" style="margin-top:20px;">
     <a class="btn" href="assets/docs/Avaliacao_Heuristica_GalaxIQ.pdf" target="_blank">
@@ -266,10 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(0);
   }
 
+  /* Inicializa corretamente UMA VEZ cada carrossel */
   initCarousel(".heuristica-carousel", ".h-prev", ".h-next");
   initCarousel(".graphs-carousel", ".g-prev", ".g-next");
+
 });
 </script>
-
-</body>
-</html>
