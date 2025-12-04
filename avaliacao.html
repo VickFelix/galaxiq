@@ -29,14 +29,13 @@
 
 .heuristica-carousel img {
   width: 100%;
-  min-width: 100%;   
+  min-width: 100%;
   height: auto;
-  object-fit: cover; 
+  object-fit: cover;
   display: block;
   border-radius: 36px;
   background: transparent;
 }
-
 
 /* ============================================================
    CARROSSEL DOS GRÁFICOS — LIVRE, SEM CORTES
@@ -44,11 +43,11 @@
 .graphs-carousel {
   position: relative;
   width: 100%;
-  max-width: 700px;  /* deixa respirar */
+  max-width: 700px;
   margin: 30px auto;
   overflow: hidden;
   border-radius: 20px;
-  background: #000000; /* fundo preto opcional */
+  background: #000000;
 }
 
 .graphs-carousel .carousel-inner {
@@ -60,10 +59,10 @@
 .graphs-carousel img {
   width: 100%;
   height: auto;
-  object-fit: contain;     /* não corta NADA */
+  object-fit: contain;
   display: block;
   border-radius: 20px;
-  background: #000;        /* deixa 100% seguro p/ gráficos largos */
+  background: #000000;
 }
 
 /* Botões dos carrosséis */
@@ -89,15 +88,18 @@
   background: rgba(124,58,237,0.85);
   transform: translateY(-50%) scale(1.12);
 }
-
   </style>
 
+  <!-- scripts do fundo -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 </head>
 
 <body>
+
+<!-- FUNDO DE ESTRELAS -->
 <div id="stars"></div>
 
 <!-- NAV -->
@@ -143,17 +145,16 @@
 
   <!-- CARROSSEL DAS HEURÍSTICAS -->
   <div class="carousel heuristica-carousel">
-  <div class="carousel-inner">
-    <img src="assets/img/foto04.jpeg">
-    <img src="assets/img/foto04.jpeg">
-    <img src="assets/img/foto04.jpeg">
-    <img src="assets/img/foto04.jpeg">
+    <div class="carousel-inner">
+      <img src="assets/img/foto04.jpeg">
+      <img src="assets/img/foto04.jpeg">
+      <img src="assets/img/foto04.jpeg">
+      <img src="assets/img/foto04.jpeg">
+    </div>
+
+    <button class="carousel-btn prev h-prev">&#10094;</button>
+    <button class="carousel-btn next h-next">&#10095;</button>
   </div>
-
-  <button class="carousel-btn prev h-prev">&#10094;</button>
-  <button class="carousel-btn next h-next">&#10095;</button>
-</div>
-
 
   <h3 style="margin-top:32px;">Insight Geral da Avaliação</h3>
 
@@ -165,16 +166,15 @@
   <h3 style="margin-top:32px;">Gráficos da Avaliação</h3>
 
   <div class="carousel graphs-carousel">
-  <div class="carousel-inner">
-    <img src="assets/img/foto01.jpeg">
-    <img src="assets/img/foto02.jpeg">
-    <img src="assets/img/foto03.jpeg">
+    <div class="carousel-inner">
+      <img src="assets/img/foto01.jpeg">
+      <img src="assets/img/foto02.jpeg">
+      <img src="assets/img/foto03.jpeg">
+    </div>
+
+    <button class="carousel-btn prev g-prev">&#10094;</button>
+    <button class="carousel-btn next g-next">&#10095;</button>
   </div>
-
-  <button class="carousel-btn prev g-prev">&#10094;</button>
-  <button class="carousel-btn next g-next">&#10095;</button>
-</div>
-
 
   <div class="btns" style="margin-top:20px;">
     <a class="btn" href="assets/docs/Avaliacao_Heuristica_GalaxIQ.pdf" target="_blank">
@@ -226,28 +226,57 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-  function initCarousel(wrapperSelector, prevSelector, nextSelector) {
-    const wrapper = document.querySelector(wrapperSelector);
-    if (!wrapper) return;
+  /* FUNDO DE ESTRELAS */
+  if (window.particlesJS) {
+    particlesJS('stars', {
+      particles:{
+        number:{ value:120, density:{ enable:true, value_area:900 }},
+        color:{ value:["#8ab5ff","#b48cff","#7de2ff","#ffffff"] },
+        opacity:{ value:0.5, random:true },
+        size:{ value:2, random:true },
+        move:{ enable:true, speed:0.6, out_mode:"out" }
+      }
+    });
+  }
 
-    const inner = wrapper.querySelector(".carousel-inner");
+  /* ANIMAÇÕES GSAP */
+  if (window.gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".hero .title", {opacity:0, y:15, duration:0.8});
+    gsap.from(".hero p", {opacity:0, y:10, duration:0.8, delay:0.1});
+    gsap.utils.toArray(".card").forEach((el,i)=>{
+      gsap.from(el,{
+        opacity:0,
+        y:20,
+        duration:.7,
+        delay:.2+i*0.05,
+        scrollTrigger:{ trigger:el, start:"top 85%" }
+      });
+    });
+  }
+
+  /* --- CARROSSEL UNIVERSAL --- */
+  function initCarousel(wrapper, prev, next) {
+    const w = document.querySelector(wrapper);
+    if (!w) return;
+    const inner = w.querySelector(".carousel-inner");
     const slides = inner.querySelectorAll("img");
     let index = 0;
 
-    function showSlide(i) {
+    function show(i) {
       index = (i + slides.length) % slides.length;
       inner.style.transform = `translateX(${-index * 100}%)`;
     }
 
-    wrapper.querySelector(prevSelector).onclick = () => showSlide(index - 1);
-    wrapper.querySelector(nextSelector).onclick = () => showSlide(index + 1);
-
-    showSlide(0);
+    w.querySelector(prev).onclick = () => show(index - 1);
+    w.querySelector(next).onclick = () => show(index + 1);
+    show(0);
   }
 
-  /* Inicializa corretamente UMA VEZ cada carrossel */
   initCarousel(".heuristica-carousel", ".h-prev", ".h-next");
   initCarousel(".graphs-carousel", ".g-prev", ".g-next");
-
 });
 </script>
+
+</body>
+</html>
