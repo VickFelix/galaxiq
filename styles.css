@@ -244,3 +244,41 @@ body { color-scheme: dark; }
   display: block;
   box-shadow: 0 0 6px rgba(124, 58, 237, 0.4);
 }
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 26px; /* <-- aumentado */
+  margin-top: 20px;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-inner img {
+  min-width: 100%;          /* <-- faz cada imagem ocupar 100% */
+  height: auto;
+  object-fit: cover;
+  border-radius: 26px;      /* <-- border-radius maior */
+}
+
+/* Botões */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 20, 35, 0.6);
+  border: none;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
