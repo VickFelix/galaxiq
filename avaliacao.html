@@ -103,15 +103,15 @@
     background: rgba(124,58,237,0.85);
     transform: translateY(-50%) scale(1.12);
   }
-  .card .carousel,
-  .card .btns {
-    margin-left: 0 !important;
-  }
+ .two-cols .left {
+  flex: 0 0 45%; /* carrossel: menor e alinhado */
+  display: flex;
+  justify-content: flex-end;
+}
 
-  .card .btns .btn {
-    display: inline-block;
-    margin-left: 0;
-  }
+.two-cols .right {
+  flex: 0 0 55%; /* texto: mais largo */
+}
 
 </style>
 
