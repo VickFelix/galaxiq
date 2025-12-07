@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="styles.css">
 
   <style>
+        .sheet-preview iframe {
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 12px 36px rgba(0,0,0,.35);
+    }
+
       .two-cols {
     display: flex;
     gap: 32px;
@@ -51,10 +57,6 @@
     border-radius: 50px;
     background: transparent;
   }
-
-  /* ============================================================
-    CARROSSEL DOS GRÁFICOS — LIVRE, SEM CORTES
-    ============================================================ */
   .graphs-carousel {
     position: relative;
     width: 100%;
@@ -122,19 +124,14 @@
 }
 
 .fc-phone {
-  width: 100%;
-  max-width: 240px;
-  display: block;             
-  background: transparent;
+  width: auto;
+  height: 100%;
+  max-height: 520px;
+  max-width: none;
+  object-fit: contain;
   border-radius: 28px;
-    overflow: hidden;
-  clip-path: inset(0 round 28px);
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  display: block;
 }
-/* ==============================
-   FIRST CLICK — GRÁFICOS
-================================ */
 
 .fc-graphs {
   display: flex;
@@ -153,13 +150,67 @@
 }
 
 .card .two-cols .left {
-  flex: 0 0 30%;
-  justify-content: center;
+  align-items: flex-start;
 }
 
 .card .two-cols .right {
   flex: 0 0 65%;
 }
+
+@media (max-width: 768px) {
+
+  .two-cols,
+  .heuristica-layout {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .firstclick-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.fc-task-title {
+  margin: 32px 0 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e9d5ff;
+}
+
+
+  .heuristica-layout .left,
+  .heuristica-layout .right,
+  .two-cols .left,
+  .two-cols .right {
+    flex: 1 1 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* carrosséis */
+  .heuristica-carousel,
+  .graphs-carousel {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* celular do first click */
+  .fc-phone {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  /* gráficos first click */
+  .fc-graphs img {
+    max-width: 100%;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
 
 
 </style>
@@ -291,6 +342,10 @@
   </p>
 
   <!-- ====== CRIAR AULA ====== -->
+      <h3 class="fc-task-title">
+      Tarefa 1 — Criar Aula
+    </h3>
+
   <div class="two-cols">
     <!-- PROTÓTIPO -->
     <div class="left">
@@ -309,6 +364,9 @@
   <hr>
 
   <!-- ====== ENTRAR EM SALA ====== -->
+   <h3 class="fc-task-title">
+      Tarefa 2 — Entrar em Sala
+    </h3>
   <div class="two-cols">
     <div class="left">
       <img class="fc-phone" src="assets/img/entraremsala.png" alt="Entrar em Sala">
@@ -325,6 +383,9 @@
   <hr>
 
   <!-- ====== FAQ ====== -->
+   <h3 class="fc-task-title">
+      Tarefa 3 — Acessar FAQ
+    </h3>
   <div class="two-cols">
     <div class="left">
       <img class="fc-phone" src="assets/img/FAQ.png" alt="FAQ">
@@ -341,6 +402,9 @@
   <hr>
 
   <!-- ====== ACESSAR QUIZ ====== -->
+   <h3 class="fc-task-title">
+      Tarefa 4 — Acessar Quiz
+    </h3>
   <div class="two-cols">
     <div class="left">
       <img class="fc-phone" src="assets/img/acessarquiz.png" alt="Acessar Quiz">
@@ -357,6 +421,9 @@
   <hr>
 
   <!-- ====== ACESSAR TURMA ====== -->
+   <h3 class="fc-task-title">
+      Tarefa 5 — Acessar Turma
+    </h3>
   <div class="two-cols">
     <div class="left">
       <img class="fc-phone" src="assets/img/acessarturma.png" alt="Acessar Turma">
@@ -369,6 +436,17 @@
       </div>
     </div>
   </div>
+  <div class="btns firstclick-actions">
+  <a class="btn" target="_blank"
+     href="https://app.useberry.com/preview/w2uDJ14jIBfr6P/?createPreview">
+    Preview do Teste
+  </a>
+
+  <a class="btn" target="_blank"
+     href="assets/docs/Relatorio_FirstClick_GalaxIQ.pdf">
+    Baixar Relatório
+  </a>
+</div>
 
 </section>
 
@@ -388,6 +466,102 @@
        <p>4. Ele percebe que avançou na tarefa graças ao feedback do sistema?</p>
     Ao aplicar essas quatro verificações de forma sequencial ao longo do caminho de uma tarefa, o Percurso Cognitivo permite identificar pontos de confusão, falta de previsibilidade, falhas de feedback e trechos em que o usuário pode não saber como avançar. É um método rápido, acessível e extremamente valioso para refinar fluxos completos antes de envolver usuários reais em testes de usabilidade.
   </p>
+  <div class="sheet-preview">
+  <iframe 
+    src="https://docs.google.com/spreadsheets/d/1FC5PfOWa-H0z9ODvDl4uiEnpq51HYL25gU7bmiqTL90/preview"
+    frameborder="0"
+    width="100%"
+    height="500">
+  </iframe>
+</div>
+<!-- ======================== INSIGHTS — PERCURSO COGNITIVO ======================== -->
+<section class="card">
+  <div class="section-kicker">insights</div>
+  <h2>Insights do Percurso Cognitivo</h2>
+
+  <p>
+    A seguir, são apresentados os principais insights obtidos a partir da análise do
+    percurso cognitivo, assim como sugestões de melhorias e ajustes no protótipo,
+    considerando a clareza das ações, feedbacks do sistema e o alinhamento com o modelo
+    mental dos usuários.
+  </p>
+
+  <!-- TAREFA 1 -->
+  <h3>Tarefa 1: Fazer Login no Aplicativo</h3>
+  <p>
+    O fluxo de login se mostrou claro e bem estruturado, com campos de e-mail e senha
+    facilmente reconhecíveis e um botão de ação condizente com a expectativa do usuário.
+    No entanto, foi identificado que o momento entre o envio das credenciais e o
+    redirecionamento para a Home apresenta um feedback pouco evidente.
+  </p>
+  <p>
+    Como sugestão de redesign, recomenda-se a inclusão de um feedback visual mais claro,
+    como um indicador de carregamento ou uma mensagem temporária de validação, reduzindo
+    a insegurança do usuário durante essa etapa.
+  </p>
+
+  <!-- TAREFA 2 -->
+  <h3>Tarefa 2: Aluno Entrar em uma Aula</h3>
+  <p>
+    A tarefa de entrada em uma aula apresentou boa correspondência entre a ação executada
+    e o objetivo final. A aba “Entrar” é facilmente identificável no menu principal e o
+    campo de inserção de código é claro e direto.
+  </p>
+  <p>
+    Apesar disso, foi observado que o feedback após a inserção do código poderia ser mais
+    explícito. Recomenda-se reforçar visualmente esse momento com uma mensagem indicando
+    que o código está sendo validado ou que a entrada na aula foi confirmada.
+  </p>
+
+  <!-- TAREFA 3 -->
+  <h3>Tarefa 3: Enviar Feedback / Dúvida (Aluno)</h3>
+  <p>
+    Esse fluxo se destacou positivamente pela sua intuitividade. A pergunta central e o
+    uso de emojis grandes e visuais facilitam o entendimento imediato da funcionalidade,
+    reduzindo a carga cognitiva do usuário.
+  </p>
+  <p>
+    A opção de envio de dúvidas de forma anônima também se mostrou coerente com o perfil
+    de alunos que possuem dificuldade em se expressar verbalmente. Como melhoria, sugere-se
+    reforçar ainda mais o feedback visual após o envio da dúvida, garantindo a percepção de
+    sucesso da ação.
+  </p>
+
+  <!-- TAREFA 4 -->
+  <h3>Tarefa 4: Acessar FAQ da Turma</h3>
+  <p>
+    O acesso ao FAQ apresentou boa previsibilidade e clareza. O nome da aba é direto e
+    compatível com o modelo mental dos usuários, e a organização por turma facilita a
+    navegação.
+  </p>
+  <p>
+    No entanto, considerando o possível volume de informações, uma sugestão de melhoria
+    seria a inclusão de filtros ou destaque para perguntas mais frequentes, facilitando
+    ainda mais a exploração do conteúdo.
+  </p>
+
+  <!-- TAREFA 5 -->
+  <h3>Tarefa 5: Professor Acompanhar Aula</h3>
+  <p>
+    O fluxo voltado ao professor se mostrou eficiente e bem alinhado às necessidades de
+    uso em tempo real. A Home centraliza informações importantes e os gráficos de feedback
+    são apresentados de forma clara e objetiva.
+  </p>
+  <p>
+    Como sugestão de aprimoramento, recomenda-se explorar feedbacks visuais em tempo real,
+    como animações sutis ou indicadores de atualização, reforçando a percepção de dinamismo
+    e acompanhamento contínuo da turma.
+  </p>
+
+  <p style="margin-top:24px;">
+    De forma geral, o percurso cognitivo indicou boa clareza das ações, associação correta
+    entre objetivos e resultados e alinhamento com o perfil dos usuários. As principais
+    oportunidades de melhoria concentram-se no reforço de feedbacks intermediários,
+    especialmente em ações que exigem validação do sistema.
+  </p>
+</section>
+
+
 </section>
 
 </main>
