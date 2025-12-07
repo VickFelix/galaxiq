@@ -1,0 +1,59 @@
+/* =========================
+   LAYOUT 2 COLUNAS
+========================= */
+.two-cols {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* =========================
+   HEURÍSTICAS
+========================= */
+.heuristica-carousel {
+  max-width: 420px;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.graphs-carousel {
+  max-width: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* =========================
+   FIRST CLICK
+========================= */
+.fc-phone {
+  height: 520px;
+  border-radius: 28px;
+}
+
+.fc-graphs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fc-task-title {
+  margin: 32px 0 16px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  color: #e9d5ff;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .two-cols {
+    flex-direction: column;
+  }
+
+  .fc-phone {
+    height: auto;
+    max-width: 220px;
+    margin: auto;
+  }
+}

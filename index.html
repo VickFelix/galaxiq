@@ -83,27 +83,39 @@
       <div class="text">Introdução à Interação Humano-Computador, Prof. Daniela Gorski Trevisan — Universidade Federal Fluminense</div>
     </div>
   </footer>
-
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* FUNDO DE ESTRELAS */
   if (window.particlesJS) {
     particlesJS('stars', {
-      "particles":{"number":{"value":120,"density":{"enable":true,"value_area":900}},"color":{"value":["#8ab5ff","#b48cff","#7de2ff","#ffffff"]},"shape":{"type":"circle"},"opacity":{"value":0.5,"random":true},"size":{"value":2,"random":true},"line_linked":{"enable":false},"move":{"enable":true,"speed":0.6,"direction":"none","random":true,"out_mode":"out"}},
-      "interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"repulse":{"distance":80,"duration":0.4},"push":{"particles_nb":3}}},
-      "retina_detect":true
+      particles:{
+        number:{ value:120, density:{ enable:true, value_area:900 }},
+        color:{ value:["#8ab5ff","#b48cff","#7de2ff","#ffffff"] },
+        opacity:{ value:0.5, random:true },
+        size:{ value:2, random:true },
+        move:{ enable:true, speed:0.6, out_mode:"out" }
+      }
     });
   }
+
+  /* ANIMAÇÕES */
   if (window.gsap) {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.from(".hero .kicker", {opacity:0, y:-10, duration:.6});
-    gsap.from(".hero .title", {opacity:0, y:10, duration:.8, delay:.1});
-    gsap.from(".hero p", {opacity:0, y:10, duration:.8, delay:.2});
-    gsap.utils.toArray(".card").forEach((el, i)=>{
-      gsap.from(el, {opacity:0, y:16, duration:.7, delay:.2 + i*0.06, scrollTrigger: {trigger: el, start:"top 85%"}});
+    gsap.from(".hero .title", {opacity:0, y:16, duration:0.8});
+    gsap.from(".hero p", {opacity:0, y:10, duration:0.8, delay:0.1});
+    gsap.utils.toArray(".card").forEach((card,i)=>{
+      gsap.from(card,{
+        opacity:0,
+        y:20,
+        duration:.7,
+        delay:.15+i*0.05,
+        scrollTrigger:{ trigger:card, start:"top 85%" }
+      });
     });
   }
+
 });
 </script>
-
 </body>
 </html>
