@@ -1,0 +1,38 @@
+
+.embed-large {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 14px 40px rgba(2,6,23,.6);
+}
+
+.embed-large iframe {
+  width: 100%;
+  height: 78vh;
+  min-height: 640px;
+  border: none;
+  display: block;
+}
+
+
+.card:has(.embed-large) {
+  padding-bottom: 34px;
+}
+
+.profile-list {
+  gap: 32px;
+}
+
+.profile-item p {
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  .embed-large iframe {
+    height: 68vh;
+    min-height: 420px;
+  }
+}
