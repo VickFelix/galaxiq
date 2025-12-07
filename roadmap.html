@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GalaxIQ — Roadmap</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="roadmap.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="logo" href="index.html">
+      <span class="logo__text">GalaxIQ</span>
+    </a>
+
+    <div class="nav__links">
+      <a href="index.html">Início</a>
+      <a href="imersao.html">Imersão</a>
+      <a href="ideacao.html">Ideação</a>
+      <a href="avaliacao.html">Avaliação</a>
+      <a href="roadmap.html" class="active">Roadmap</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__content">
+    <div class="kicker">galaxiq • processo</div>
+    <h1 class="title">Roadmap do Projeto</h1>
+    <p>Etapas metodológicas que guiaram o desenvolvimento da solução.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section class="card">
+  <div class="section-kicker">processo</div>
+  <h2>Visão Geral</h2>
+
+  <p>
+    O roadmap apresentado representa as principais etapas do desenvolvimento do projeto
+    na disciplina de Interação Humano-Computador (IHC). O processo foi estruturado em três
+    fases principais — <strong>Imersão</strong>, <strong>Ideação</strong> e
+    <strong>Avaliação</strong> — garantindo uma abordagem sistemática e centrada no usuário.
+  </p>
+
+  <!-- ROADMAP -->
+  <div class="roadmap">
+
+    <!-- IMERSÃO -->
+    <div class="roadmap-step">
+      <div class="step-marker">1</div>
+      <div class="step-card">
+        <h3>Imersão</h3>
+        <p>
+          Fase dedicada à compreensão profunda do problema e do contexto dos usuários.
+          Definimos o <em>How Might We</em>, realizamos pesquisa desk, entrevistas,
+          questionários e análise competitiva, garantindo que as decisões seguintes fossem
+          fundamentadas em dados reais.
+        </p>
+      </div>
+    </div>
+
+    <!-- IDEAÇÃO -->
+    <div class="roadmap-step">
+      <div class="step-marker">2</div>
+      <div class="step-card">
+        <h3>Ideação</h3>
+        <p>
+          A partir dos insights obtidos, desenvolvemos personas, cenários-problema,
+          modelos de tarefas e utilizamos técnicas como <em>Crazy 4</em> para explorar
+          soluções criativas. Essa etapa culminou na construção do protótipo.
+        </p>
+      </div>
+    </div>
+
+    <!-- AVALIAÇÃO -->
+    <div class="roadmap-step">
+      <div class="step-marker">3</div>
+      <div class="step-card">
+        <h3>Avaliação</h3>
+        <p>
+          Avaliamos a solução por meio de Avaliação Heurística, First Click e Percurso
+          Cognitivo. Os métodos permitiram identificar problemas de usabilidade e
+          direcionar melhorias, refinando o protótipo antes da versão final.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="inner">
+    <div class="text">
+      Interação Humano-Computador — Universidade Federal Fluminense
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  if (window.particlesJS) {
+    particlesJS("stars", {
+      particles:{
+        number:{ value:110 },
+        size:{ value:2 },
+        move:{ speed:0.6 }
+      }
+    });
+  }
+
+  if (window.gsap) {
+    gsap.utils.toArray(".roadmap-step").forEach((step,i)=>{
+      gsap.from(step,{
+        opacity:0,
+        y:30,
+        duration:.7,
+        delay:i*0.15,
+        scrollTrigger:{ trigger:step, start:"top 85%" }
+      });
+    });
+  }
+});
+</script>
+
+</body>
+</html>

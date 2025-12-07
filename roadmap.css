@@ -1,0 +1,100 @@
+/* ================= ROADMAP ================= */
+
+.roadmap {
+  display: flex;
+  gap: 48px;
+  margin-top: 40px;
+  position: relative;
+}
+
+/* linha central */
+.roadmap::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(124,58,237,.8),
+    transparent
+  );
+}
+
+/* etapa */
+.roadmap-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* marcador */
+.step-marker {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#7c3aed,#22d3ee);
+  color: #fff;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(124,58,237,.6);
+  margin-bottom: 16px;
+}
+
+/* card */
+.step-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 20px 18px;
+  box-shadow: 0 16px 40px rgba(2,6,23,.4);
+}
+
+.step-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+  .roadmap {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .roadmap::before {
+    left: 24px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    transform: none;
+  }
+
+  .roadmap-step {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 56px;
+    position: relative;
+  }
+
+  .step-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
