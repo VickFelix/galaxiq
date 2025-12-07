@@ -6,12 +6,134 @@
   <title>GalaxIQ — Avaliação</title>
 
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+      .two-cols {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .two-cols .left {
+    flex: 1 1 55%;
+  }
+
+  .two-cols .right {
+    flex: 1 1 40%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .heuristica-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 50px;
+  }
+
+  .heuristica-carousel .carousel-inner {
+    display: flex;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+  }
+
+  .heuristica-carousel img {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 50px;
+    background: transparent;
+  }
+
+  /* ============================================================
+    CARROSSEL DOS GRÁFICOS — LIVRE, SEM CORTES
+    ============================================================ */
+  .graphs-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000000;
+  }
+
+  .graphs-carousel .carousel-inner {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .graphs-carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: 20px;
+    background: #000000;
+  }
+
+  /* Botões dos carrosséis */
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.55);
+    border: none;
+    padding: 14px;
+    color: #fff;
+    font-size: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    transition: 0.25s ease;
+  }
+
+  .carousel-btn.prev { left: 12px; }
+  .carousel-btn.next { right: 12px; }
+
+  .carousel-btn:hover {
+    background: rgba(124,58,237,0.85);
+    transform: translateY(-50%) scale(1.12);
+  }
+ .two-cols {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* impede DE CAIR PARA BAIXO */
+}
+
+.two-cols .left {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: flex-end; /* joga o carrossel para a direita */
+}
+
+.two-cols .right {
+  flex: 1;
+}
+
+
+</style>
+
+  <!-- scripts do fundo -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 </head>
 
 <body>
+
+<!-- FUNDO DE ESTRELAS -->
 <div id="stars"></div>
 
 <!-- NAV -->
@@ -31,7 +153,6 @@
       <a href="ideacao.html">Ideação</a>
       <a href="avaliacao.html" class="active">Avaliação</a>
       <a href="roadmap.html">Roadmap</a>
-      
     </div>
   </div>
 </nav>
@@ -39,9 +160,9 @@
 <!-- HEADER -->
 <header class="hero">
   <div class="hero__content">
-    <div class="kicker">galaxiq • análise</div>
+    <div class="kicker">galaxiq • educação </div>
     <h1 class="title">Avaliação Heurística</h1>
-    <p>Problemas revelados, constelações corrigidas e caminhos que guiaram o redesign.</p>
+    <p> Caminhos que guiam o redesign.</p>
   </div>
 </header>
 
@@ -50,58 +171,113 @@
 <!-- ======================== AVALIAÇÃO HEURÍSTICA ======================== -->
 <section class="card">
   <div class="section-kicker">método</div>
-  <h2>O que é Avaliação Heurística?</h2>
+  <h2>Avaliação Heurística</h2>
 
-  <p>
-    A Avaliação Heurística é uma inspeção especializada onde a interface é analisada sob as lentes 
-    das dez heurísticas de Nielsen.  
-    Esse método ilumina falhas estruturais — inconsistências, ausência de feedback,
-    rótulos confusos e rotas quebradas — antes mesmo de envolver usuários reais.
-  </p>
+  <div class="two-cols">
 
-  <!-- ======================== CARROSSEL ======================== -->
-  <div class="carousel">
-    <div class="carousel-inner">
-      <img src="assets/heuristicas/heuristica1.jpg" alt="Avaliação Heurística 1">
-      <img src="assets/heuristicas/heuristica2.jpg" alt="Avaliação Heurística 2">
-      <img src="assets/heuristicas/heuristica3.jpg" alt="Avaliação Heurística 3">
-      <img src="assets/heuristicas/heuristica4.jpg" alt="Avaliação Heurística 4">
+  <!-- TEXTO À ESQUERDA -->
+  <div class="right">
+    <p>
+      A Avaliação Heurística é um método de inspeção de usabilidade, especialistas analisam uma interface com base em um conjunto de princípios consolidados, como as heurísticas de Nielsen. O objetivo é identificar problemas estruturais antes de envolver usuários reais, garantindo que o protótipo esteja alinhado a boas práticas de design. Essa técnica permite detectar falhas relacionadas à consistência, visibilidade do status do sistema, clareza de rótulos, prevenção de erros e correspondência entre o sistema e o modelo mental do usuário. Por ser rápida, econômica e eficaz para revelar problemas conceituais, tornou-se etapa fundamental em processos iterativos de design.
+    </p>
+  </div>
+
+  <!-- CARROSSEL À DIREITA -->
+  <div class="left">
+    <div class="carousel heuristica-carousel">
+      <div class="carousel-inner">
+        <img src="assets/img/heu1.jpeg">
+        <img src="assets/img/foto05.jpeg">
+        <img src="assets/img/foto06.jpeg">
+        <img src="assets/img/foto07.jpeg">
+      </div>
+
+      <button class="carousel-btn prev h-prev">&#10094;</button>
+      <button class="carousel-btn next h-next">&#10095;</button>
+    </div>
+  </div>
+
+</div>
+
+  <h3 style="margin-top:32px;">Insights e gráficos das heurísticas</h3>
+
+  <div class="two-cols">
+
+  <!-- CARROSSEL À ESQUERDA -->
+    <div class="left">
+      <div class="carousel graphs-carousel">
+        <div class="carousel-inner">
+          <img src="assets/img/foto01.jpeg">
+          <img src="assets/img/foto02.jpeg">
+          <img src="assets/img/foto03.jpeg">
+        </div>
+
+        <button class="carousel-btn prev g-prev">&#10094;</button>
+        <button class="carousel-btn next g-next">&#10095;</button>
+      </div>
     </div>
 
-    <button class="carousel-btn prev">&#10094;</button>
-    <button class="carousel-btn next">&#10095;</button>
+    <!-- TEXTO À DIREITA -->
+    <div class="right">
+      <p>
+        A Avaliação revelou pontos importantes sobre o protótipo. Foram identificadas
+        inconsistências entre rotas e perfis, mudanças no fluxo de navegação e termos
+        que dificultavam a interpretação das ações. Também foram observadas falhas na
+        visibilidade de feedbacks, especialmente em momentos críticos, como envio de
+        dúvidas ou transição entre turmas.
+        <br><br>
+        Outro insight relevante foi a necessidade de reforçar a hierarquia visual em
+        telas densas, reduzindo sobrecarga cognitiva. Esses achados direcionaram ajustes
+        essenciais no protótipo antes dos testes com usuários, fortalecendo a clareza,
+        previsibilidade e coerência da interface.
+      </p>
   </div>
 
-  <!-- ======================== INSIGHT ======================== -->
-  <h3 style="margin-top:32px;">🪐 Insight Geral da Avaliação</h3>
-  <p>
-    As principais falhas encontradas orbitaram em torno de três heurísticas:  
-    <strong>Consistência e Padronização</strong>, 
-    <strong>Controle e Liberdade do Usuário</strong> 
-    e <strong>Correspondência com o Mundo Real</strong>.
-    Termos ambíguos, rotas incorretas e ausência de botões de retorno criavam fricções 
-    que impediam uma navegação fluida entre universos do professor e do aluno.
-  </p>
-
-  <p>
-    Também foram identificadas falhas de <strong>visibilidade do estado do sistema</strong> — 
-    ações sem confirmação, fluxos silenciosos — apagando o brilho da experiência.
-    Esses achados guiaram ajustes fundamentais no redesign do GalaxIQ.
-  </p>
-
-  <!-- ======================== GRÁFICOS ======================== -->
-  <div class="charts">
-    <img class="chart-img" src="assets/heuristicas/grafico1.jpg" alt="Gráfico Severidade">
-    <img class="chart-img" src="assets/heuristicas/grafico2.jpg" alt="Gráfico Percentual Severidades">
-    <img class="chart-img" src="assets/heuristicas/grafico3.jpg" alt="Gráfico Heurísticas Violadas">
   </div>
-
-  <!-- ======================== BOTÃO RELATÓRIO ======================== -->
   <div class="btns" style="margin-top:20px;">
     <a class="btn" href="assets/docs/Avaliacao_Heuristica_GalaxIQ.pdf" target="_blank">
       📄 Abrir Relatório Completo
     </a>
   </div>
+</section>
+
+<!-- ======================== FIRST CLICK ======================== -->
+<section class="card">
+  <div class="section-kicker">método</div>
+  <h2>First Click</h2>
+
+  <p>
+   O First Click é um método de avaliação que analisa onde o usuário clica primeiro ao tentar executar uma tarefa específica. Se o primeiro clique está correto, as chances de sucesso no restante do fluxo aumentam significativamente. Esse método permite verificar a intuitividade da interface, a clareza dos rótulos e a eficácia da hierarquia visual. Além de fornecer métricas objetivas como tempo até o primeiro clique, taxa de acerto e mapas de calor. o First Click revela padrões de hesitação e dispersão que ajudam a identificar elementos pouco visíveis ou mal posicionados. Por ser rápido e focado em decisões iniciais, é ideal para validar se os caminhos mais importantes estão claros ao primeiro olhar.
+  </p>
+
+  <div class="firstclick-wrapper"></div>
+
+  <div class="btn-row">
+    <a class="btn" target="_blank" href="https://app.useberry.com/preview/w2uDJ14jIBfr6P/?createPreview">
+      🔍 Prévia do First Click
+    </a>
+    <a class="btn" target="_blank" href="assets/docs/Relatorio_FirstClick_GalaxIQ.pdf">
+      📄 Baixar Relatório
+    </a>
+  </div>
+</section>
+
+<!-- ======================== PRÓXIMO MÉTODO ======================== -->
+<section class="card">
+  <div class="section-kicker">método</div>
+  <h2>Percurso Cognitivo</h2>
+
+  <p>O Percurso Cognitivo é um método de avaliação centrado na perspectiva de um usuário iniciante, utilizado para analisar passo a passo como alguém percorre um fluxo dentro da interface. Em vez de observar usuários reais, o avaliador simula mentalmente o processo de tomada de decisão, verificando se cada etapa de uma tarefa é percebida, compreendida e executada da forma esperada.
+    A análise é feita etapa por etapa, guiada por quatro perguntas essenciais:
+
+       <p>1. O usuário entende qual é a meta naquele momento?</p>
+
+       <p>2. Ele percebe a ação correta disponível na tela?</p>
+
+       <p>3. Ele reconhece que essa ação leva ao resultado desejado?</p>
+       <p>4. Ele percebe que avançou na tarefa graças ao feedback do sistema?</p>
+    Ao aplicar essas quatro verificações de forma sequencial ao longo do caminho de uma tarefa, o Percurso Cognitivo permite identificar pontos de confusão, falta de previsibilidade, falhas de feedback e trechos em que o usuário pode não saber como avançar. É um método rápido, acessível e extremamente valioso para refinar fluxos completos antes de envolver usuários reais em testes de usabilidade.
+  </p>
 </section>
 
 </main>
@@ -110,63 +286,65 @@
 <footer class="footer">
   <div class="inner">
     <div class="brand"></div>
-    <div class="text">Introdução à Interação Humano-Computador, Prof. Daniela Gorski Trevisan — Universidade Federal Fluminense</div>
+    <div class="text">Introdução à Interação Humano-Computador — Universidade Federal Fluminense</div>
   </div>
 </footer>
 
 <!-- SCRIPTS -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-  /* ESTRELAS */
+  /* FUNDO DE ESTRELAS */
   if (window.particlesJS) {
     particlesJS('stars', {
       particles:{
         number:{ value:120, density:{ enable:true, value_area:900 }},
         color:{ value:["#8ab5ff","#b48cff","#7de2ff","#ffffff"] },
-        shape:{ type:"circle" },
         opacity:{ value:0.5, random:true },
         size:{ value:2, random:true },
-        line_linked:{ enable:false },
-        move:{ enable:true, speed:0.6, random:true, out_mode:"out" }
-      },
-      interactivity:{
-        events:{ onhover:{ enable:true, mode:"repulse" } }
+        move:{ enable:true, speed:0.6, out_mode:"out" }
       }
     });
   }
 
-  /* ANIMAÇÃO */
+  /* ANIMAÇÕES GSAP */
   if (window.gsap) {
     gsap.registerPlugin(ScrollTrigger);
-
     gsap.from(".hero .title", {opacity:0, y:15, duration:0.8});
     gsap.from(".hero p", {opacity:0, y:10, duration:0.8, delay:0.1});
-
     gsap.utils.toArray(".card").forEach((el,i)=>{
-      gsap.from(el,{ opacity:0, y:20, duration:.7, delay:0.2+i*0.05,
+      gsap.from(el,{
+        opacity:0,
+        y:20,
+        duration:.7,
+        delay:.2+i*0.05,
         scrollTrigger:{ trigger:el, start:"top 85%" }
       });
     });
   }
 
-  /* CARROSSEL */
-  const carousel = document.querySelector(".carousel-inner");
-  const slides = document.querySelectorAll(".carousel-inner img");
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  let index = 0;
+  /* --- CARROSSEL UNIVERSAL --- */
+  function initCarousel(wrapper, prev, next) {
+    const w = document.querySelector(wrapper);
+    if (!w) return;
+    const inner = w.querySelector(".carousel-inner");
+    const slides = inner.querySelectorAll("img");
+    let index = 0;
 
-  function showSlide(i) {
-    index = (i + slides.length) % slides.length;
-    carousel.style.transform = `translateX(${-index * 100}%)`;
+    function show(i) {
+      index = (i + slides.length) % slides.length;
+      inner.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    w.querySelector(prev).onclick = () => show(index - 1);
+    w.querySelector(next).onclick = () => show(index + 1);
+    show(0);
   }
 
-  prevBtn.addEventListener("click", () => showSlide(index - 1));
-  nextBtn.addEventListener("click", () => showSlide(index + 1));
+  initCarousel(".heuristica-carousel", ".h-prev", ".h-next");
+  initCarousel(".graphs-carousel", ".g-prev", ".g-next");
 });
 </script>
 
 </body>
 </html>
-
